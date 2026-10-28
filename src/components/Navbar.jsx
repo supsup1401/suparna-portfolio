@@ -1,0 +1,3 @@
+import { useState } from 'react';
+import { Menu, X, Download } from 'lucide-react';
+export default function Navbar(){const [open,setOpen]=useState(false);return <header className="nav"><a className="brand" href="#home">S<span>.</span>DB</a><button className="menu" aria-label="Toggle menu" onClick={()=>setOpen(!open)}>{open?<X/>:<Menu/>}</button><nav className={open?'links open':'links'}>{['about','skills','projects','education','contact'].map(x=><a key={x} onClick={()=>setOpen(false)} href={'#'+x}>{x}</a>)}<a className="nav-resume" href="/resume.pdf" download><Download size={15}/> Resume</a></nav></header>}
